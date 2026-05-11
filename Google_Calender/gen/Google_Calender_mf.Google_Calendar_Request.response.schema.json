@@ -1,0 +1,557 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "items": {
+    "type": "object",
+    "properties": {
+      "eventId": {
+        "title": "Event ID",
+        "description": "The event identifier",
+        "type": "string",
+        "displayOrder": 1
+      },
+      "startTime": {
+        "title": "Start time",
+        "description": "The inclusive start time of the event in ISO 8601 UTC format, YYYY-MM-DDTHH:MM:SS. For a recurring event, this is the start time of the first instance.",
+        "nullable": false,
+        "type": "string",
+        "format": "date-time",
+        "displayOrder": 1
+      },
+      "endTime": {
+        "title": "End time",
+        "description": "The exclusive end time of the event in ISO 8601 UTC format, YYYY-MM-DDTHH:MM:SS. For a recurring event, this is the end time of the first instance.",
+        "nullable": false,
+        "type": "string",
+        "format": "date-time",
+        "displayOrder": 2
+      },
+      "timeZone": {
+        "title": "Time zone",
+        "description": "The time zone of the timestamp specified, for example, Asia/Kolkata",
+        "enum": [
+          "Africa/Algiers",
+          "Africa/Cairo",
+          "Africa/Casablanca",
+          "Africa/Harare",
+          "Africa/Nairobi",
+          "Africa/Windhoek",
+          "America/Anchorage",
+          "America/Belize",
+          "America/Bogota",
+          "America/Buenos_Aires",
+          "America/Caracas",
+          "America/Chicago",
+          "America/Chihuahua",
+          "America/Denver",
+          "America/Godthab",
+          "America/Halifax",
+          "America/Indiana/Indianapolis",
+          "America/Los_Angeles",
+          "America/Manaus",
+          "America/Mexico_City",
+          "America/Montevideo",
+          "America/New_York",
+          "America/Noronha",
+          "America/Phoenix",
+          "America/Regina",
+          "America/Santiago",
+          "America/Sao_Paulo",
+          "America/St_Johns",
+          "America/Tijuana",
+          "Asia/Amman",
+          "Asia/Baghdad",
+          "Asia/Baku",
+          "Asia/Bangkok",
+          "Asia/Beirut",
+          "Asia/Chongqing",
+          "Asia/Colombo",
+          "Asia/Dhaka",
+          "Asia/Jerusalem",
+          "Asia/Kabul",
+          "Asia/Karachi",
+          "Asia/Katmandu",
+          "Asia/Kolkata",
+          "Asia/Krasnoyarsk",
+          "Asia/Kuala_Lumpur",
+          "Asia/Muscat",
+          "Asia/Novosibirsk",
+          "Asia/Rangoon",
+          "Asia/Seoul",
+          "Asia/Taipei",
+          "Asia/Tbilisi",
+          "Asia/Tehran",
+          "Asia/Tokyo",
+          "Asia/Ulaanbaatar",
+          "Asia/Vladivostok",
+          "Asia/Yakutsk",
+          "Asia/Yekaterinburg",
+          "Asia/Yerevan",
+          "Atlantic/Azores",
+          "Atlantic/Cape_Verde",
+          "Australia/Adelaide",
+          "Australia/Brisbane",
+          "Australia/Canberra",
+          "Australia/Darwin",
+          "Australia/Hobart",
+          "Australia/Perth",
+          "Europe/Amsterdam",
+          "Europe/Athens",
+          "Europe/Belgrade",
+          "Europe/Brussels",
+          "Europe/Helsinki",
+          "Europe/London",
+          "Europe/Minsk",
+          "Europe/Moscow",
+          "Europe/Warsaw",
+          "Pacific/Auckland",
+          "Pacific/Fiji",
+          "Pacific/Guadalcanal",
+          "Pacific/Guam",
+          "Pacific/Honolulu",
+          "Pacific/Midway",
+          "Pacific/Tongatapu"
+        ],
+        "type": "string",
+        "displayOrder": 3
+      },
+      "allDayEvent": {
+        "title": "All-day event",
+        "description": "Indicates whether it is an all-day event",
+        "type": "boolean",
+        "displayOrder": 4
+      },
+      "iCalUID": {
+        "title": "Calendar event unique ID",
+        "description": "The unique identifier that identifies the events accross the calendaring systems ",
+        "type": "string",
+        "displayOrder": 6
+      },
+      "kind": {
+        "title": "Kind",
+        "description": "The type of the resource",
+        "type": "string",
+        "displayOrder": 7
+      },
+      "etag": {
+        "title": "ETag",
+        "description": "The ETag of the resource",
+        "type": "string",
+        "displayOrder": 8
+      },
+      "summary": {
+        "title": "Summary",
+        "description": "The name or title of the event",
+        "nullable": false,
+        "type": "string",
+        "displayOrder": 7
+      },
+      "description": {
+        "title": "Description",
+        "description": "The description of the event. This description can contain HTML.",
+        "type": "string",
+        "displayOrder": 8
+      },
+      "location": {
+        "title": "Location",
+        "description": "The geographic location of the event as free-form text",
+        "type": "string",
+        "displayOrder": 9
+      },
+      "status": {
+        "title": "Status",
+        "description": "The status of the event",
+        "enum": [
+          "confirmed",
+          "tentative",
+          "cancelled"
+        ],
+        "type": "string",
+        "displayOrder": 10
+      },
+      "htmlLink": {
+        "title": "HTML link",
+        "description": "An absolute link to the event in the Google Calendar web UI",
+        "type": "string",
+        "displayOrder": 11
+      },
+      "created": {
+        "title": "Created date",
+        "description": "The creation time of the event in ISO 8601 UTC format, YYYY-MM-DDTHH:MM:SSZ",
+        "type": "string",
+        "format": "date-time",
+        "displayOrder": 16
+      },
+      "updated": {
+        "title": "Updated date",
+        "description": "The last modification date of the event in ISO 8601 UTC format, YYYY-MM-DDTHH:MM:SSZ",
+        "type": "string",
+        "format": "date-time",
+        "displayOrder": 17
+      },
+      "creator": {
+        "title": "Creator",
+        "description": "The creator of the event",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Calendar ID",
+            "description": "The identifier of the calendar",
+            "type": "string",
+            "displayOrder": 1
+          },
+          "email": {
+            "title": "Email",
+            "description": "The creator's email address, if available",
+            "type": "string",
+            "displayOrder": 2
+          },
+          "displayName": {
+            "title": "Display name",
+            "description": "The creator's name, if available",
+            "type": "string",
+            "displayOrder": 3
+          },
+          "self": {
+            "title": "Self",
+            "description": "Indicates whether the creator corresponds to the calendar on which the copy of the event appears. The default value is false.",
+            "type": "boolean",
+            "displayOrder": 4
+          }
+        },
+        "additionalProperties": false,
+        "displayOrder": 19
+      },
+      "organizer": {
+        "title": "Organizer",
+        "description": "The organizer of the event",
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "description": "The organizer's profile ID, if available",
+            "type": "string",
+            "displayOrder": 1
+          },
+          "email": {
+            "title": "Email",
+            "description": "The organizer's email address, if available",
+            "type": "string",
+            "displayOrder": 2
+          },
+          "displayName": {
+            "title": "Display name",
+            "description": "The organizer's name, if available",
+            "type": "string",
+            "displayOrder": 3
+          },
+          "self": {
+            "title": "Self",
+            "description": "Indicates whether the organizer corresponds to the calendar on which the copy of the event appears. The default value is false.",
+            "type": "boolean",
+            "displayOrder": 4
+          }
+        },
+        "additionalProperties": false,
+        "displayOrder": 20
+      },
+      "recurrence": {
+        "title": "Recurrence",
+        "description": "An event that recurs at intervals can be created",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "displayOrder": 22
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Indicates whether the event blocks time on the calendar",
+        "enum": [
+          "opaque",
+          "transparent"
+        ],
+        "type": "string",
+        "displayOrder": 25
+      },
+      "visibility": {
+        "title": "Visibility",
+        "description": "The visibility of the event",
+        "enum": [
+          "default",
+          "public",
+          "private",
+          "confidential"
+        ],
+        "type": "string",
+        "displayOrder": 27
+      },
+      "sequence": {
+        "title": "Sequence",
+        "description": "The sequence number as per-iCalendar",
+        "type": "number",
+        "displayOrder": 28
+      },
+      "guestsCanInviteOthers": {
+        "title": "Guests can invite others",
+        "description": "Indicates whether attendees other than the organizer can invite others to the event",
+        "type": "boolean",
+        "displayOrder": 29
+      },
+      "guestsCanModify": {
+        "title": "Guests can modify",
+        "description": "Indicates whether attendees other than the organizer can modify the event ",
+        "type": "boolean",
+        "displayOrder": 30
+      },
+      "guestsCanSeeOtherGuests": {
+        "title": "Guests can see other guests",
+        "description": "Indicates whether the attendees other than the organiser can see who is attending the event",
+        "type": "boolean",
+        "displayOrder": 31
+      },
+      "privateCopy": {
+        "title": "Private copy",
+        "description": "Indicates if event propagation is disabled",
+        "type": "boolean",
+        "displayOrder": 32
+      },
+      "eventType": {
+        "title": "Event type",
+        "description": "The specific type of the event",
+        "enum": [
+          "default",
+          "outOfOffice",
+          "focusTime"
+        ],
+        "type": "string",
+        "displayOrder": 33
+      },
+      "locked": {
+        "title": "Locked",
+        "description": "Indicates that no changes can be made to the main event fields (locked event copy) such as summary, description, location, start, end or recurrence",
+        "type": "boolean",
+        "displayOrder": 34
+      },
+      "source": {
+        "title": "Source",
+        "description": "The source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS schemes. Can only be seen or modified by the creator of the event.",
+        "type": "object",
+        "properties": {
+          "url": {
+            "title": "URL",
+            "description": "The source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS schemes. Can only be seen or modified by the creator of the event.",
+            "type": "string",
+            "displayOrder": 1
+          },
+          "title": {
+            "title": "Title",
+            "description": "The subject or title of the source. For example, a title of a web page or an email subject.",
+            "type": "string",
+            "displayOrder": 2
+          }
+        },
+        "additionalProperties": false,
+        "displayOrder": 35
+      },
+      "reminders": {
+        "title": "Reminders",
+        "description": "The information about the event's reminders for the authenticated user",
+        "type": "object",
+        "properties": {
+          "useDefault": {
+            "title": "Use default",
+            "description": "Indicates whether the default reminders of the calendar apply to the event",
+            "type": "boolean",
+            "displayOrder": 1
+          },
+          "overrides": {
+            "title": "Overrides",
+            "description": "The event-specific reminders, if the event doesn't use the default reminders. If not specified, it indicates that no reminders are set for this event. ",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "method": {
+                  "title": "Method",
+                  "description": "The method used by the reminder",
+                  "enum": [
+                    "email",
+                    "popup"
+                  ],
+                  "type": "string",
+                  "displayOrder": 1
+                },
+                "minutes": {
+                  "title": "Minutes",
+                  "description": "The number of minutes before the event's start time that the reminder should trigger",
+                  "type": "number",
+                  "displayOrder": 2
+                }
+              },
+              "additionalProperties": false
+            },
+            "displayOrder": 2
+          }
+        },
+        "additionalProperties": false,
+        "displayOrder": 37
+      },
+      "attendees": {
+        "title": "Attendees",
+        "description": "The attendees of the event",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "title": "ID",
+              "description": "The attendee's profile ID, if available",
+              "type": "string",
+              "displayOrder": 1
+            },
+            "email": {
+              "title": "Email",
+              "description": "The attendee's email address, if available. The email address must be specified when adding an attendee.",
+              "type": "string",
+              "displayOrder": 2
+            },
+            "displayName": {
+              "title": "Display name",
+              "description": "The attendee's name, if available",
+              "type": "string",
+              "displayOrder": 3
+            },
+            "organizer": {
+              "title": "Organizer",
+              "description": "Indicates whether the attendee is the organizer of the event. The default value is false.",
+              "type": "boolean",
+              "displayOrder": 4
+            },
+            "self": {
+              "title": "Self",
+              "description": "Indicates whether the entry represents the calendar on which this copy of the event appears. The default value is false.",
+              "type": "boolean",
+              "displayOrder": 5
+            },
+            "resource": {
+              "title": "Resource",
+              "description": "Indicates whether the attendee is a resource. Can only be set when the attendee is added to the event for the first time. The default value is false.",
+              "type": "boolean",
+              "displayOrder": 6
+            },
+            "optional": {
+              "title": "Optional",
+              "description": "Indicates whether it is an optional attendee. The default value is false.",
+              "type": "boolean",
+              "displayOrder": 7
+            },
+            "responseStatus": {
+              "title": "Response status",
+              "description": "The attendee's response status",
+              "enum": [
+                "needsAction",
+                "declined",
+                "tentative",
+                "accepted"
+              ],
+              "type": "string",
+              "displayOrder": 8
+            },
+            "comment": {
+              "title": "Comment",
+              "description": "The attendee's response comment.",
+              "type": "string",
+              "displayOrder": 9
+            },
+            "additionalGuests": {
+              "title": "Additional guests",
+              "description": "The number of additional guests. The default value is 0.",
+              "type": "number",
+              "displayOrder": 10
+            }
+          },
+          "additionalProperties": false
+        },
+        "displayOrder": 38
+      },
+      "attachments": {
+        "title": "Attachments",
+        "description": "The file attachments for the event",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "title": "Title",
+              "description": "The attachment name or title",
+              "type": "string",
+              "displayOrder": 1
+            },
+            "fileUrl": {
+              "title": "File URL",
+              "description": "The URL link to the attachment",
+              "type": "string",
+              "displayOrder": 2
+            },
+            "fileId": {
+              "title": "File ID",
+              "description": "The ID of the attached file. For Google Drive files, this is the ID of the corresponding files resource entry in the Drive API.",
+              "type": "string",
+              "displayOrder": 3
+            },
+            "mimeType": {
+              "title": "MIME type",
+              "description": "The media type (Multipurpose Internet Mail Extensions or MIME type) of the attachment",
+              "type": "string",
+              "displayOrder": 4
+            },
+            "iconLink": {
+              "title": "Icon link",
+              "description": "The URL link to the attachment's icon",
+              "type": "string",
+              "displayOrder": 5
+            }
+          },
+          "additionalProperties": false
+        },
+        "displayOrder": 39
+      },
+      "sendUpdates": {
+        "title": "Send updates",
+        "description": "Whether to send notifications about the creation of the new event. Note that some emails might still be sent. The default is false.",
+        "enum": [
+          "all",
+          "externalOnly",
+          "none"
+        ],
+        "type": "string",
+        "displayOrder": 43
+      },
+      "extendedProperties": {
+        "title": "Extended properties",
+        "description": "The extended properties of the event",
+        "type": "object",
+        "properties": {
+          "private": {
+            "title": "Private",
+            "description": "The properties that are private to the copy of the event that appears on the calendar",
+            "type": "object",
+            "displayOrder": 1
+          },
+          "shared": {
+            "title": "Shared",
+            "description": "The properties that are shared between copies of the event on other attendees' calendars",
+            "type": "object",
+            "displayOrder": 2
+          }
+        },
+        "additionalProperties": false,
+        "displayOrder": 57
+      }
+    },
+    "title": "events",
+    "additionalProperties": false
+  },
+  "type": "array",
+  "title": "events"
+}
