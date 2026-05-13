@@ -12,7 +12,7 @@ public class JAVA_COMPUTE_SELECT_WHERE_MF_JavaCompute extends MbJavaComputeNode 
         MbOutputTerminal out = getOutputTerminal("out");
         MbOutputTerminal alt = getOutputTerminal("alternate");
 
-        // MbMessage inMessage = inAssembly.getMessage();
+         MbMessage inMessage = inAssembly.getMessage();
 
         MbMessage outMessage = new MbMessage();
         MbMessageAssembly outAssembly = new MbMessageAssembly(inAssembly, outMessage);
@@ -49,7 +49,7 @@ public class JAVA_COMPUTE_SELECT_WHERE_MF_JavaCompute extends MbJavaComputeNode 
 
                 MbElement customer = customers.createElementAsLastChild(MbElement.TYPE_NAME, "Customer", null);
 
-              //  customer.createElementAsLastChild(MbElement.TYPE_NAME, "ID", rs.getInt("EMP_ID"));
+                 customer.createElementAsLastChild(MbElement.TYPE_NAME, "ID", rs.getInt("EMP_ID"));
                 customer.createElementAsLastChild(MbElement.TYPE_NAME, "NAME", rs.getString("EMP_NAME"));
                 customer.createElementAsLastChild(MbElement.TYPE_NAME, "Age", rs.getInt("EMP_AGE"));
                 customer.createElementAsLastChild(MbElement.TYPE_NAME, "City", rs.getString("EMP_CITY"));
