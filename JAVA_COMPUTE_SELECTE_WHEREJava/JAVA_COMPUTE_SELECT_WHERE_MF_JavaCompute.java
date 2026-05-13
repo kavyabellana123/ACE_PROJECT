@@ -12,7 +12,7 @@ public class JAVA_COMPUTE_SELECT_WHERE_MF_JavaCompute extends MbJavaComputeNode 
         MbOutputTerminal out = getOutputTerminal("out");
         MbOutputTerminal alt = getOutputTerminal("alternate");
 
-        MbMessage inMessage = inAssembly.getMessage();
+        // MbMessage inMessage = inAssembly.getMessage();
 
         MbMessage outMessage = new MbMessage();
         MbMessageAssembly outAssembly = new MbMessageAssembly(inAssembly, outMessage);
